@@ -1,0 +1,20 @@
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15rem;
+}
+
+.box-row{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.count-div{
+  display: flex;
+  gap: 4rem;
+  justify-content:flex-start ;
+  /* margin-right: 3rem; */
+}
