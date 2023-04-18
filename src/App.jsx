@@ -1,10 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 
-function Tile({ value, onTileClick, onstyle }) {
+function Tile({ value, onTileClick, winner, index }) {
   return (
     <>
-      <button style={{ onstyle }} onClick={onTileClick}>
+      <button
+        className={`${winner?.includes(index) ? "test" : null}`}
+        onClick={onTileClick}
+      >
         {value}
       </button>
     </>
@@ -42,7 +45,7 @@ function App() {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (Tiles[a] && Tiles[a] === Tiles[b] && Tiles[a] === Tiles[c]) {
-        return Tiles[a];
+        return [a, b, c];
       }
     }
   }
@@ -57,12 +60,6 @@ function App() {
   } else {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
-  function handlestyle() {
-    const box = Tiles.slice();
-    if (winner) {
-      box.Tiles = { backgroundcolor: "red" };
-    }
-  }
 
   return (
     <div className="App">
@@ -74,53 +71,62 @@ function App() {
       </div>
       <div className="box-row">
         <Tile
+          index={0}
           value={Tiles[0]}
           onTileClick={() => handleClick(0)}
-          onstyle={handlestyle}
+          {...{ winner }}
         />
         <Tile
+          index={1}
           value={Tiles[1]}
           onTileClick={() => handleClick(1)}
-          onstyle={handlestyle}
+          {...{ winner }}
         />
         <Tile
+          index={2}
           value={Tiles[2]}
           onTileClick={() => handleClick(2)}
-          onstyle={handlestyle}
+          {...{ winner }}
         />
       </div>
       <div className="box-row">
         <Tile
+          index={3}
           value={Tiles[3]}
           onTileClick={() => handleClick(3)}
-          onstyle={handlestyle}
+          {...{ winner }}
         />
         <Tile
+          index={4}
           value={Tiles[4]}
           onTileClick={() => handleClick(4)}
-          onstyle={handlestyle}
+          {...{ winner }}
         />
         <Tile
+          index={5}
           value={Tiles[5]}
           onTileClick={() => handleClick(5)}
-          onstyle={handlestyle}
+          {...{ winner }}
         />
       </div>
       <div className="box-row">
         <Tile
+          index={6}
           value={Tiles[6]}
           onTileClick={() => handleClick(6)}
-          onstyle={handlestyle}
+          {...{ winner }}
         />
         <Tile
+          index={7}
           value={Tiles[7]}
           onTileClick={() => handleClick(7)}
-          onstyle={handlestyle}
+          {...{ winner }}
         />
         <Tile
+          index={8}
           value={Tiles[8]}
           onTileClick={() => handleClick(8)}
-          onstyle={handlestyle}
+          {...{ winner }}
         />
       </div>
     </div>

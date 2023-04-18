@@ -1,4 +1,4 @@
-.App{
+.App {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,15 +6,19 @@
   margin-top: 15rem;
 }
 
-.box-row{
+.box-row {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
 }
 
-.count-div{
+.count-div {
   display: flex;
   gap: 4rem;
-  justify-content:flex-start ;
+  justify-content: flex-start;
   /* margin-right: 3rem; */
+}
+
+.test {
+  background-color: aqua;
 }
